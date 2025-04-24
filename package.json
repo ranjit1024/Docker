@@ -1,0 +1,19 @@
+{
+  "name": "docker-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "module": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc -b"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^5.0.1",
+    "mongoose": "^8.13.2",
+    "typescript": "^5.8.3"
+  }
+}
