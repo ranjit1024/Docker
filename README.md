@@ -3,7 +3,7 @@
 two docker containers are communicating with each other using network
 ## Installation
 
-Install my-project with npm
+Install my-project with Docker
 
 ```bash
   cd my-project
