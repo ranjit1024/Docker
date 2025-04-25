@@ -1,28 +1,21 @@
-import user from  "./db"
 import express from "express"
-
+import userRouter from "./routes/usreRoutes";
+import connectDB from "./db";
 const app = express();
+const port = 3000;
+
 app.use(express.json());
+
+app.use('/api/user',userRouter );
 
 app.get('/', (req,res)=>{
     res.status(200).json({
-        msg:"Server Healthy"
+        msg:"halthy server"
     })
 })
 
-app.post("/", async (req,res)=>{
-    const name = req.body.name;
-    const password = req.body.password
-
-    await user.create({
-        name:name,
-        password:password
-    });
-    res.status(200).json({
-        mag:"User Created"
+connectDB().then(()=>{
+    app.listen(port, ()=>{
+        console.log(`listing on port number ${port}`)
     })
-})
-
-app.listen(3000, ()=>{
-    console.log("listing on port number 3000")
 })
